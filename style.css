@@ -113,6 +113,33 @@ h1, h2 {
     margin-bottom: 15px;
 }
 
+.emergency-container {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.emergency-number {
+    padding: 20px;
+}
+
+.emergency-number i {
+    font-size: 48px;
+    color: #ff4444;
+    margin-bottom: 15px;
+}
+
+.phone-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff4444;
+    margin-top: 10px;
+}
+
 .contact-container {
     max-width: 1200px;
     width: 100%;
