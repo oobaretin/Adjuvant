@@ -34,8 +34,8 @@ const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-links a');
 
 const observerOptions = {
-    threshold: 0.5,
-    rootMargin: "-50% 0px"
+    threshold: [0.2, 0.5, 0.8],
+    rootMargin: "-20% 0px"
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -54,3 +54,19 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 sections.forEach(section => observer.observe(section));
+
+// Additional scroll event handling for smoother navigation highlight
+window.addEventListener('scroll', () => {
+    let currentSection = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 150) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${currentSection}`);
+    });
+});
