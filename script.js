@@ -70,3 +70,18 @@ window.addEventListener('scroll', () => {
         link.classList.toggle('active', link.getAttribute('href') === `#${currentSection}`);
     });
 });
+
+// Slideshow functionality
+function startSlideshow() {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 5000); // Change slide every 5 seconds
+}
+
+// Start the slideshow when the page loads
+window.addEventListener('load', startSlideshow);
