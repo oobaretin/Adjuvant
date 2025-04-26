@@ -126,7 +126,7 @@ nav {
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
