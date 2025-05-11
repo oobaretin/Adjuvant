@@ -165,9 +165,21 @@ section {
     justify-content: center;
 }
 
-section > * {
+section > div {
     max-width: 1200px;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
+}
+
+section h2 {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto 30px;
+}
+
+section p {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 section p {
