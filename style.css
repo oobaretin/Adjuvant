@@ -125,7 +125,7 @@ nav {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     background-size: cover;
-    background-position: center;
+    background-position: 60% center;
     background-repeat: no-repeat;
 }
 
