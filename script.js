@@ -88,15 +88,15 @@ window.addEventListener('load', startSlideshow);
 
 // Hamburger menu functionality
 const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+const mobileNavLinks = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    mobileNavLinks.classList.toggle('active');
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        navLinks.classList.remove('active');
+    if (!hamburger.contains(e.target) && !mobileNavLinks.contains(e.target)) {
+        mobileNavLinks.classList.remove('active');
     }
 });
