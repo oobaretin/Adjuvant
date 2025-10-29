@@ -6,6 +6,9 @@ import { navigationItems } from '@/data/constants';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Play } from 'next/font/google';
+
+const playBold = Play({ weight: '700', subsets: ['latin'] });
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +31,7 @@ export default function Header() {
               height={60}
               className="rounded object-contain sm:w-20 sm:h-20"
             />
-            <span className="text-sm sm:text-lg md:text-xl font-bold text-gray-900 leading-tight play-bold">
+            <span className={`${playBold.className} text-sm sm:text-lg md:text-xl font-bold text-gray-900 leading-tight`}>
               Adjuvant Ambulance Transport
             </span>
           </div>
