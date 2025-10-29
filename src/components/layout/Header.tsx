@@ -31,7 +31,7 @@ export default function Header() {
               height={60}
               className="rounded object-contain sm:w-20 sm:h-20"
             />
-            <span className={`${playBold.className} text-sm sm:text-lg md:text-xl font-bold text-gray-900 leading-tight`}>
+            <span className={`${playBold.className} text-base sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight`}>
               Adjuvant Ambulance Transport
             </span>
           </div>
