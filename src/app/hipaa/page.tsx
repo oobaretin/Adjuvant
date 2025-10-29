@@ -184,7 +184,7 @@ export default function HIPAAPage() {
               <p className="mb-2">
                 <strong>Privacy Officer:</strong> Adjuvant Ambulance Transport<br />
                 <strong>Address:</strong> 6776 Southwest Fwy # 532, Houston, TX 77074<br />
-                <strong>Phone:</strong> (281) 704-1077<br />
+                <strong>Phone:</strong> 979-633-8437<br />
                 <strong>Email:</strong> privacy@adjuvantambulance.com
               </p>
               <p className="text-sm text-gray-600 mt-4">

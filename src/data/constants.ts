@@ -56,13 +56,13 @@ export const contactInfo = {
   address: '6776 Southwest Fwy # 532, Houston, TX 77074',
   building: 'Located in: Southwest Atrium Offices Ltd',
   hours: 'Open 24 hours',
-  phone: '(281) 704-1077',
+  phone: '979-633-8437',
   accessibility: 'Wheelchair accessible'
 } as const;
 
 // Emergency information
 export const emergencyInfo = {
-  phone: '(281) 704-1077',
+  phone: '979-633-8437',
   features: [
     { icon: 'ambulance', text: 'Immediate Response Available' },
     { icon: 'clock', text: '24/7 Service' },

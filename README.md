@@ -207,7 +207,7 @@ This project is licensed under the MIT License.
 ## 📞 Support
 
 For support or questions, please contact:
-- **Phone**: (281) 704-1077
+- **Phone**: 979-633-8437
 - **Email**: [Contact through website]
 
 ---

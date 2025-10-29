@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
 
             <h2>Contact Us</h2>
             <p>
-              For questions or requests regarding this Privacy Policy, contact us at (281) 704-1077.
+              For questions or requests regarding this Privacy Policy, contact us at 979-633-8437.
             </p>
           </div>
         </div>

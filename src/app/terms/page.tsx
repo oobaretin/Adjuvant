@@ -108,7 +108,7 @@ export default function TermsOfServicePage() {
               For questions about these Terms of Service, please contact us at:
             </p>
             <ul>
-              <li>Phone: (281) 704-1077</li>
+              <li>Phone: 979-633-8437</li>
               <li>Address: 6776 Southwest Fwy # 532, Houston, TX 77074</li>
               <li>Email: info@adjuvantambulance.com</li>
             </ul>
