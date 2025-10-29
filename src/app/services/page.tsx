@@ -239,7 +239,11 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Services in Group */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className={`grid gap-6 ${
+                    group.id === 'specialized' 
+                      ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto' 
+                      : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+                  }`}>
                     {group.services.map((service) => {
                       const IconComponent = service.icon;
                       const colorClasses = getColorClasses(service.color);
