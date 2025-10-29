@@ -29,8 +29,7 @@ export default function Header() {
               className="rounded object-contain sm:w-20 sm:h-20"
             />
             <span className="text-sm sm:text-lg md:text-xl font-semibold text-gray-900 leading-tight">
-              <span className="hidden xs:inline">Adjuvant Ambulance Transport</span>
-              <span className="xs:hidden">Adjuvant</span>
+              Adjuvant Ambulance Transport
             </span>
           </div>
 
