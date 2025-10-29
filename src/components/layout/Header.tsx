@@ -23,7 +23,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2 sm:space-x-4">
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-4 hover:opacity-80 transition-opacity duration-200">
             <Image
               src="/10AA25EC-38F2-403A-B83E-463F69E80CCE.png"
               alt="Adjuvant Ambulance Services Logo"
@@ -34,7 +34,7 @@ export default function Header() {
             <span className={`${playBold.className} text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight`}>
               Adjuvant Ambulance Transport
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
