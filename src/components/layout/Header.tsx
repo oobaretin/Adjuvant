@@ -27,11 +27,11 @@ export default function Header() {
             <Image
               src="/10AA25EC-38F2-403A-B83E-463F69E80CCE.png"
               alt="Adjuvant Ambulance Services Logo"
-              width={60}
-              height={60}
-              className="rounded object-contain sm:w-20 sm:h-20"
+              width={80}
+              height={80}
+              className="rounded object-contain w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
             />
-            <span className={`${playBold.className} text-base sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight`}>
+            <span className={`${playBold.className} text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight`}>
               Adjuvant Ambulance Transport
             </span>
           </div>
