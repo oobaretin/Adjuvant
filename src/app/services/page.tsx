@@ -15,117 +15,144 @@ import {
   Truck
 } from 'lucide-react';
 
-const serviceCategories = [
+const serviceGroups = [
   {
     id: 'emergency',
-    title: 'Emergency Response',
-    description: '24/7 emergency medical transport with fully equipped ambulances, advanced life support, and certified paramedics.',
+    title: 'Emergency Services',
+    description: '24/7 emergency medical transport with fully equipped ambulances and certified paramedics',
     icon: Ambulance,
     color: 'red',
-    features: [
-      'Advanced Life Support (ALS)',
-      'Basic Life Support (BLS)',
-      'Cardiac monitoring',
-      'Oxygen therapy',
-      'IV therapy'
-    ]
-  },
-  {
-    id: 'critical-care',
-    title: 'Critical Care Transport',
-    description: 'Specialized transport for patients requiring intensive care during transportation between medical facilities.',
-    icon: HeartPulse,
-    color: 'blue',
-    features: [
-      'ICU-level monitoring',
-      'Ventilator support',
-      'Medication management',
-      'Specialized equipment',
-      'Critical care nurses'
-    ]
-  },
-  {
-    id: 'trauma',
-    title: 'Trauma Transport',
-    description: 'Rapid response for trauma patients with specialized equipment and highly trained medical personnel.',
-    icon: ShieldCheck,
-    color: 'orange',
-    features: [
-      'Trauma assessment',
-      'Spinal immobilization',
-      'Bleeding control',
-      'Pain management',
-      'Rapid transport protocols'
+    services: [
+      {
+        id: 'emergency-response',
+        title: 'Emergency Response',
+        description: '24/7 emergency medical transport with fully equipped ambulances, advanced life support, and certified paramedics.',
+        icon: Ambulance,
+        color: 'red',
+        features: [
+          'Advanced Life Support (ALS)',
+          'Basic Life Support (BLS)',
+          'Cardiac monitoring',
+          'Oxygen therapy',
+          'IV therapy'
+        ]
+      },
+      {
+        id: 'critical-care',
+        title: 'Critical Care Transport',
+        description: 'Specialized transport for patients requiring intensive care during transportation between medical facilities.',
+        icon: HeartPulse,
+        color: 'blue',
+        features: [
+          'ICU-level monitoring',
+          'Ventilator support',
+          'Medication management',
+          'Specialized equipment',
+          'Critical care nurses'
+        ]
+      },
+      {
+        id: 'trauma',
+        title: 'Trauma Transport',
+        description: 'Rapid response for trauma patients with specialized equipment and highly trained medical personnel.',
+        icon: ShieldCheck,
+        color: 'orange',
+        features: [
+          'Trauma assessment',
+          'Spinal immobilization',
+          'Bleeding control',
+          'Pain management',
+          'Rapid transport protocols'
+        ]
+      }
     ]
   },
   {
     id: 'non-emergency',
-    title: 'Non-Emergency Medical Transport',
-    description: 'Safe, comfortable, and reliable transportation for scheduled medical appointments, treatments, and other healthcare needs.',
+    title: 'Non-Emergency Services',
+    description: 'Safe, comfortable, and reliable transportation for scheduled medical appointments and healthcare needs',
     icon: Stethoscope,
     color: 'green',
-    features: [
-      'Medical appointments',
-      'Specialist visits',
-      'Routine check-ups',
-      'Follow-up appointments',
-      'Medical consultations'
+    services: [
+      {
+        id: 'medical-appointments',
+        title: 'Medical Appointments',
+        description: 'Reliable transportation to and from doctor visits, specialist appointments, and routine medical check-ups.',
+        icon: Stethoscope,
+        color: 'green',
+        features: [
+          'Doctor appointments',
+          'Specialist visits',
+          'Routine check-ups',
+          'Follow-up appointments',
+          'Medical consultations'
+        ]
+      },
+      {
+        id: 'scheduled-transports',
+        title: 'Scheduled Transports',
+        description: 'Pre-scheduled medical transportation for planned procedures, treatments, and appointments with guaranteed pickup times.',
+        icon: Calendar,
+        color: 'teal',
+        features: [
+          'Surgery transport',
+          'Chemotherapy appointments',
+          'Physical therapy sessions',
+          'Diagnostic procedures',
+          'Rehabilitation visits'
+        ]
+      },
+      {
+        id: 'discharge-transport',
+        title: 'Discharge Transport',
+        description: 'Safe transport home from hospitals, rehabilitation centers, and other medical facilities following treatment or procedures.',
+        icon: Home,
+        color: 'pink',
+        features: [
+          'Hospital discharge',
+          'Rehabilitation discharge',
+          'Post-surgery transport',
+          'Nursing home transport',
+          'Home care setup'
+        ]
+      }
     ]
   },
   {
-    id: 'dialysis',
-    title: 'Dialysis Transport',
-    description: 'Specialized transport for dialysis patients with trained staff who understand the unique needs of renal care.',
-    icon: Clock,
-    color: 'purple',
-    features: [
-      'Regular dialysis appointments',
-      'Comfortable seating',
-      'Punctual service',
-      'Specialized equipment',
-      'Experienced drivers'
-    ]
-  },
-  {
-    id: 'wheelchair',
-    title: 'Wheelchair Transport',
-    description: 'Accessible transportation for wheelchair users with properly equipped vehicles and trained assistance staff.',
+    id: 'specialized',
+    title: 'Specialized Services',
+    description: 'Additional services to meet specific medical transportation needs and ensure comprehensive care',
     icon: Accessibility,
-    color: 'indigo',
-    features: [
-      'Wheelchair-accessible vehicles',
-      'Lift assistance',
-      'Secure wheelchair restraints',
-      'Trained staff',
-      'Comfortable seating'
-    ]
-  },
-  {
-    id: 'scheduled',
-    title: 'Scheduled Transports',
-    description: 'Pre-scheduled medical transportation for planned procedures, treatments, and appointments with guaranteed pickup times.',
-    icon: Calendar,
-    color: 'teal',
-    features: [
-      'Surgery transport',
-      'Chemotherapy appointments',
-      'Physical therapy sessions',
-      'Diagnostic procedures',
-      'Rehabilitation visits'
-    ]
-  },
-  {
-    id: 'discharge',
-    title: 'Discharge Transport',
-    description: 'Safe transport home from hospitals, rehabilitation centers, and other medical facilities following treatment or procedures.',
-    icon: Home,
-    color: 'pink',
-    features: [
-      'Hospital discharge',
-      'Rehabilitation discharge',
-      'Post-surgery transport',
-      'Nursing home transport',
-      'Home care setup'
+    color: 'purple',
+    services: [
+      {
+        id: 'dialysis',
+        title: 'Dialysis Transport',
+        description: 'Specialized transport for dialysis patients with trained staff who understand the unique needs of renal care.',
+        icon: Clock,
+        color: 'purple',
+        features: [
+          'Regular dialysis appointments',
+          'Comfortable seating',
+          'Punctual service',
+          'Specialized equipment',
+          'Experienced drivers'
+        ]
+      },
+      {
+        id: 'wheelchair',
+        title: 'Wheelchair Transport',
+        description: 'Accessible transportation for wheelchair users with properly equipped vehicles and trained assistance staff.',
+        icon: Accessibility,
+        color: 'indigo',
+        features: [
+          'Wheelchair-accessible vehicles',
+          'Lift assistance',
+          'Secure wheelchair restraints',
+          'Trained staff',
+          'Comfortable seating'
+        ]
+      }
     ]
   }
 ];
@@ -189,37 +216,64 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceCategories.map((service) => {
-              const IconComponent = service.icon;
-              const colorClasses = getColorClasses(service.color);
+          <div className="space-y-16">
+            {serviceGroups.map((group) => {
+              const GroupIconComponent = group.icon;
+              const groupColorClasses = getColorClasses(group.color);
               
               return (
-                <div
-                  key={service.id}
-                  className="bg-white rounded-lg shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className={`p-3 rounded-full ${colorClasses}`}>
-                      <IconComponent className="h-8 w-8" />
+                <div key={group.id} className="space-y-8">
+                  {/* Group Header */}
+                  <div className="text-center">
+                    <div className="flex justify-center mb-4">
+                      <div className={`p-4 rounded-full ${groupColorClasses}`}>
+                        <GroupIconComponent className="h-10 w-10" />
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 ml-3">
-                      {service.title}
-                    </h3>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                      {group.title}
+                    </h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                      {group.description}
+                    </p>
                   </div>
-                  
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <ul className="space-y-2">
-                    {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+
+                  {/* Services in Group */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {group.services.map((service) => {
+                      const IconComponent = service.icon;
+                      const colorClasses = getColorClasses(service.color);
+                      
+                      return (
+                        <div
+                          key={service.id}
+                          className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                        >
+                          <div className="flex items-center mb-4">
+                            <div className={`p-3 rounded-full ${colorClasses}`}>
+                              <IconComponent className="h-6 w-6" />
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 ml-3">
+                              {service.title}
+                            </h3>
+                          </div>
+                          
+                          <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                            {service.description}
+                          </p>
+                          
+                          <ul className="space-y-2">
+                            {service.features.map((feature, index) => (
+                              <li key={index} className="flex items-center text-xs text-gray-600">
+                                <CheckCircle className="h-3 w-3 text-green-500 mr-2 flex-shrink-0" />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               );
             })}
