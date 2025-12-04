@@ -28,7 +28,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div className="space-y-8">
-              <div className="bg-white rounded-lg shadow-lg p-10">
+              <div className="bg-white rounded-lg shadow-lg p-8">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">
                   Get in Touch
                 </h2>
@@ -82,13 +82,13 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Form */}
-              <div className="bg-white rounded-lg shadow-lg p-8 sm:p-10">
+              <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
                 <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">
                   Send us a Message
                 </h2>
                 <form className="space-y-4 sm:space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name
                     </label>
                     <input
@@ -101,7 +101,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Email Address
                     </label>
                     <input
@@ -114,7 +114,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number
                     </label>
                     <input
@@ -126,7 +126,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message
                     </label>
                     <textarea
@@ -167,7 +167,7 @@ export default function ContactPage() {
               </div>
 
               {/* Customer Reviews */}
-              <div className="bg-white rounded-lg shadow-lg p-10">
+              <div className="bg-white rounded-lg shadow-lg p-8">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">
                   What Our Customers Say
                 </h2>
@@ -184,8 +184,8 @@ export default function ContactPage() {
                           />
                         ))}
                       </div>
-                      <p className="text-gray-700 text-base italic mb-2">"{review.text}"</p>
-                      <p className="text-gray-600 text-base font-medium">- {review.name}</p>
+                      <p className="text-gray-700 text-sm italic mb-2">"{review.text}"</p>
+                      <p className="text-gray-600 text-sm font-medium">- {review.name}</p>
                     </div>
                   ))}
                 </div>

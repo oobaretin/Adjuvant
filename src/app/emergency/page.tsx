@@ -30,14 +30,14 @@ export default function BookTransportPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Booking Form */}
-            <div className="bg-white rounded-lg shadow-lg p-8 sm:p-10">
+            <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">
                 Request Transport
               </h2>
               <form className="space-y-4 sm:space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                       First Name *
                     </label>
                     <input
@@ -50,7 +50,7 @@ export default function BookTransportPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
                       Last Name *
                     </label>
                     <input
@@ -66,7 +66,7 @@ export default function BookTransportPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="phone" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number *
                     </label>
                     <input
@@ -79,7 +79,7 @@ export default function BookTransportPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Email Address
                     </label>
                     <input
@@ -93,7 +93,7 @@ export default function BookTransportPage() {
                 </div>
 
                 <div>
-                    <label htmlFor="pickupLocation" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="pickupLocation" className="block text-sm font-medium text-gray-700 mb-2">
                       Pickup Location *
                     </label>
                   <input
@@ -107,7 +107,7 @@ export default function BookTransportPage() {
                 </div>
 
                 <div>
-                    <label htmlFor="destination" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="destination" className="block text-sm font-medium text-gray-700 mb-2">
                       Destination *
                     </label>
                   <input
@@ -122,7 +122,7 @@ export default function BookTransportPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="transportDate" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="transportDate" className="block text-sm font-medium text-gray-700 mb-2">
                       Preferred Date *
                     </label>
                     <input
@@ -134,7 +134,7 @@ export default function BookTransportPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="transportTime" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="transportTime" className="block text-sm font-medium text-gray-700 mb-2">
                       Preferred Time *
                     </label>
                     <input
@@ -148,7 +148,7 @@ export default function BookTransportPage() {
                 </div>
 
                 <div>
-                    <label htmlFor="serviceType" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-2">
                       Service Type *
                     </label>
                   <select
@@ -168,7 +168,7 @@ export default function BookTransportPage() {
                 </div>
 
                 <div>
-                    <label htmlFor="specialRequirements" className="block text-base font-medium text-gray-700 mb-2">
+                    <label htmlFor="specialRequirements" className="block text-sm font-medium text-gray-700 mb-2">
                       Special Requirements
                     </label>
                   <textarea
@@ -192,7 +192,7 @@ export default function BookTransportPage() {
             {/* Service Information */}
             <div className="space-y-6">
               {/* Contact Info */}
-              <div className="bg-white rounded-lg shadow-lg p-8 sm:p-10">
+              <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Contact Information</h3>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
@@ -208,21 +208,21 @@ export default function BookTransportPage() {
                     <MapPin className="h-5 w-5 text-blue-600" />
                     <div>
                       <p className="text-gray-700 font-medium">Address</p>
-                      <p className="text-gray-600 text-base">{contactInfo.address}</p>
+                      <p className="text-gray-600 text-sm">{contactInfo.address}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Clock className="h-5 w-5 text-blue-600" />
                     <div>
                       <p className="text-gray-700 font-medium">Hours</p>
-                      <p className="text-gray-600 text-base">{contactInfo.hours}</p>
+                      <p className="text-gray-600 text-sm">{contactInfo.hours}</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Service Features */}
-              <div className="bg-white rounded-lg shadow-lg p-8 sm:p-10">
+              <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Services</h3>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
@@ -245,9 +245,9 @@ export default function BookTransportPage() {
               </div>
 
               {/* Emergency Notice */}
-              <div className="bg-red-50 border border-red-200 rounded-lg p-8">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                 <h4 className="text-lg font-semibold text-red-800 mb-2">Emergency Situations</h4>
-                <p className="text-red-700 text-base mb-3">
+                <p className="text-red-700 text-sm mb-3">
                   For life-threatening emergencies, please call 911 immediately or our emergency line:
                 </p>
                 <a

@@ -20,7 +20,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-6">
-            <div className="bg-white rounded-lg shadow-lg p-10">
+            <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="text-xl font-semibold text-gray-900 mb-6">
                 Get in Touch
               </h3>
@@ -30,7 +30,7 @@ export default function ContactSection() {
                   <MapPin className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-700 font-medium">Address</p>
-                    <p className="text-gray-600 text-base">{contactInfo.address}</p>
+                    <p className="text-gray-600">{contactInfo.address}</p>
                   </div>
                 </div>
 
@@ -38,7 +38,7 @@ export default function ContactSection() {
                   <Building2 className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-700 font-medium">Building</p>
-                    <p className="text-gray-600 text-base">{contactInfo.building}</p>
+                    <p className="text-gray-600">{contactInfo.building}</p>
                   </div>
                 </div>
 
@@ -46,7 +46,7 @@ export default function ContactSection() {
                   <Clock3 className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-700 font-medium">Hours</p>
-                    <p className="text-gray-600 text-base">{contactInfo.hours}</p>
+                    <p className="text-gray-600">{contactInfo.hours}</p>
                   </div>
                 </div>
 
@@ -67,7 +67,7 @@ export default function ContactSection() {
                   <ShieldCheck className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-700 font-medium">Accessibility</p>
-                    <p className="text-gray-600 text-base">{contactInfo.accessibility}</p>
+                    <p className="text-gray-600">{contactInfo.accessibility}</p>
                   </div>
                 </div>
               </div>

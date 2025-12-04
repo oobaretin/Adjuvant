@@ -251,25 +251,25 @@ export default function ServicesPage() {
                       return (
                         <div
                           key={service.id}
-                          className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                          className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100"
                         >
                           <div className="flex items-center mb-4">
                             <div className={`p-3 rounded-full ${colorClasses}`}>
                               <IconComponent className="h-6 w-6" />
                             </div>
-                            <h3 className="text-xl font-semibold text-gray-900 ml-3">
+                            <h3 className="text-lg font-semibold text-gray-900 ml-3">
                               {service.title}
                             </h3>
                           </div>
                           
-                          <p className="text-gray-600 mb-4 leading-relaxed text-base">
+                          <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                             {service.description}
                           </p>
                           
                           <ul className="space-y-2">
                             {service.features.map((feature, index) => (
-                              <li key={index} className="flex items-center text-sm text-gray-600">
-                                <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                              <li key={index} className="flex items-center text-xs text-gray-600">
+                                <CheckCircle className="h-3 w-3 text-green-500 mr-2 flex-shrink-0" />
                                 {feature}
                               </li>
                             ))}

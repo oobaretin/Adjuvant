@@ -21,13 +21,13 @@ export default function HIPAAPage() {
           </div>
 
           <div className="prose prose-gray max-w-none">
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-8 mb-8">
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
               <div className="flex">
                 <div className="flex-shrink-0">
                   <AlertTriangle className="h-5 w-5 text-blue-400" />
                 </div>
                 <div className="ml-3">
-                  <p className="text-base text-blue-700">
+                  <p className="text-sm text-blue-700">
                     <strong>Important:</strong> This notice describes how medical information about you may be used and disclosed and how you can get access to this information. Please review it carefully.
                   </p>
                 </div>
@@ -104,42 +104,42 @@ export default function HIPAAPage() {
             <h2>Your Rights Regarding Your Health Information</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center mb-3">
                   <Eye className="h-5 w-5 text-blue-600 mr-2" />
                   <h3 className="text-lg font-semibold">Right to Inspect and Copy</h3>
                 </div>
-                <p className="text-base text-gray-600">
+                <p className="text-sm text-gray-600">
                   You have the right to inspect and copy your health information, with some exceptions.
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center mb-3">
                   <FileText className="h-5 w-5 text-blue-600 mr-2" />
                   <h3 className="text-lg font-semibold">Right to Request Amendment</h3>
                 </div>
-                <p className="text-base text-gray-600">
+                <p className="text-sm text-gray-600">
                   You may request that we amend your health information if you believe it is incorrect or incomplete.
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center mb-3">
                   <Lock className="h-5 w-5 text-blue-600 mr-2" />
                   <h3 className="text-lg font-semibold">Right to Request Restrictions</h3>
                 </div>
-                <p className="text-base text-gray-600">
+                <p className="text-sm text-gray-600">
                   You may request restrictions on how we use or disclose your health information.
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center mb-3">
                   <ShieldCheck className="h-5 w-5 text-blue-600 mr-2" />
                   <h3 className="text-lg font-semibold">Right to Confidential Communications</h3>
                 </div>
-                <p className="text-base text-gray-600">
+                <p className="text-sm text-gray-600">
                   You may request that we communicate with you in a specific way or at a specific location.
                 </p>
               </div>
@@ -179,15 +179,15 @@ export default function HIPAAPage() {
               a complaint.
             </p>
 
-            <div className="bg-gray-50 p-8 rounded-lg mt-8">
+            <div className="bg-gray-50 p-6 rounded-lg mt-8">
               <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
-              <p className="mb-2 text-base">
+              <p className="mb-2">
                 <strong>Privacy Officer:</strong> Adjuvant Ambulance Transport<br />
                 <strong>Address:</strong> 6776 Southwest Fwy # 532, Houston, TX 77074<br />
                 <strong>Phone:</strong> 979-633-8437<br />
                 <strong>Email:</strong> privacy@adjuvantambulance.com
               </p>
-              <p className="text-base text-gray-600 mt-4">
+              <p className="text-sm text-gray-600 mt-4">
                 <strong>U.S. Department of Health and Human Services:</strong><br />
                 Office for Civil Rights<br />
                 200 Independence Avenue, S.W.<br />
@@ -196,7 +196,7 @@ export default function HIPAAPage() {
               </p>
             </div>
 
-            <p className="text-base text-gray-500 mt-8">
+            <p className="text-sm text-gray-500 mt-8">
               <strong>Effective Date:</strong> January 1, 2025<br />
               <strong>Last Updated:</strong> January 1, 2025
             </p>
