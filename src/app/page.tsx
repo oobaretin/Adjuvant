@@ -24,33 +24,33 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            <div className="text-center p-6 bg-red-50 rounded-lg">
+            <div className="text-center p-8 bg-red-50 rounded-lg">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚨</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Emergency Response</h3>
-              <p className="text-gray-600 text-sm">24/7 emergency medical transport with ALS/BLS support</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Emergency Response</h3>
+              <p className="text-gray-600 text-base">24/7 emergency medical transport with ALS/BLS support</p>
             </div>
-            <div className="text-center p-6 bg-blue-50 rounded-lg">
+            <div className="text-center p-8 bg-blue-50 rounded-lg">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🏥</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Critical Care</h3>
-              <p className="text-gray-600 text-sm">ICU-level monitoring and specialized equipment</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Critical Care</h3>
+              <p className="text-gray-600 text-base">ICU-level monitoring and specialized equipment</p>
             </div>
-            <div className="text-center p-6 bg-green-50 rounded-lg">
+            <div className="text-center p-8 bg-green-50 rounded-lg">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📅</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Scheduled Transport</h3>
-              <p className="text-gray-600 text-sm">Reliable transport for appointments and treatments</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Scheduled Transport</h3>
+              <p className="text-gray-600 text-base">Reliable transport for appointments and treatments</p>
             </div>
-            <div className="text-center p-6 bg-purple-50 rounded-lg">
+            <div className="text-center p-8 bg-purple-50 rounded-lg">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">♿</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Wheelchair Accessible</h3>
-              <p className="text-gray-600 text-sm">Specialized vehicles and trained assistance staff</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Wheelchair Accessible</h3>
+              <p className="text-gray-600 text-base">Specialized vehicles and trained assistance staff</p>
             </div>
           </div>
 

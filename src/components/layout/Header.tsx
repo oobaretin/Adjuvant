@@ -44,7 +44,7 @@ export default function Header() {
                 <Link
                   key={item.id}
                   href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  className={`px-4 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                     isActive
                       ? 'text-blue-600 bg-blue-50'
                       : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
@@ -83,7 +83,7 @@ export default function Header() {
                     key={item.id}
                     href={item.href}
                     onClick={handleNavClick}
-                    className={`block px-4 py-3 rounded-lg text-base font-medium w-full text-left transition-colors duration-200 touch-manipulation min-h-[48px] flex items-center ${
+                    className={`block px-4 py-3 rounded-lg text-lg font-medium w-full text-left transition-colors duration-200 touch-manipulation min-h-[48px] flex items-center ${
                       isActive
                         ? 'text-blue-600 bg-blue-50'
                         : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'

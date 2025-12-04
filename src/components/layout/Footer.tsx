@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <h3 className="text-xl font-bold mb-4">Adjuvant Ambulance Transport</h3>
-            <p className="text-gray-300 mb-4 leading-relaxed">
+            <p className="text-gray-300 mb-4 leading-relaxed text-base">
               Professional emergency medical transportation services in Houston, Texas. 
               Committed to saving lives and providing exceptional care 24/7.
             </p>
@@ -86,7 +86,7 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">Emergency</p>
+                  <p className="text-gray-300 text-base">Emergency</p>
                   <a 
                     href={`tel:${emergencyInfo.phone}`}
                     className="text-white font-semibold hover:text-blue-400 transition-colors duration-200"
@@ -98,15 +98,15 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">Address</p>
-                  <p className="text-white text-sm">{contactInfo.address}</p>
+                  <p className="text-gray-300 text-base">Address</p>
+                  <p className="text-white text-base">{contactInfo.address}</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock3 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">Hours</p>
-                  <p className="text-white text-sm">{contactInfo.hours}</p>
+                  <p className="text-gray-300 text-base">Hours</p>
+                  <p className="text-white text-base">{contactInfo.hours}</p>
                 </div>
               </div>
             </div>
@@ -118,19 +118,19 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <HeartPulse className="h-4 w-4 text-red-400" />
-                <span className="text-gray-300 text-sm">24/7 Emergency Response</span>
+                <span className="text-gray-300 text-base">24/7 Emergency Response</span>
               </div>
               <div className="flex items-center space-x-2">
                 <HeartPulse className="h-4 w-4 text-red-400" />
-                <span className="text-gray-300 text-sm">Licensed EMTs & Paramedics</span>
+                <span className="text-gray-300 text-base">Licensed EMTs & Paramedics</span>
               </div>
               <div className="flex items-center space-x-2">
                 <HeartPulse className="h-4 w-4 text-red-400" />
-                <span className="text-gray-300 text-sm">Wheelchair Accessible</span>
+                <span className="text-gray-300 text-base">Wheelchair Accessible</span>
               </div>
               <div className="flex items-center space-x-2">
                 <HeartPulse className="h-4 w-4 text-red-400" />
-                <span className="text-gray-300 text-sm">Modern Medical Equipment</span>
+                <span className="text-gray-300 text-base">Modern Medical Equipment</span>
               </div>
             </div>
             
@@ -138,7 +138,7 @@ export default function Footer() {
             <div className="mt-6">
               <Link
                 href="/emergency"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-base font-semibold transition-colors duration-200"
               >
                 Book Transport
               </Link>

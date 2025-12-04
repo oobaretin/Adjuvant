@@ -25,17 +25,17 @@ export default function AboutPage() {
                 paramedics, and medical professionals who are ready to respond 24/7.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                <div className="bg-white rounded-lg shadow-lg p-8">
+                <div className="bg-white rounded-lg shadow-lg p-10">
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-base">
                     To provide exceptional medical transportation services that save lives and ensure 
                     the safety and comfort of our patients during their most critical moments, while 
                     also offering reliable non-emergency transport for all healthcare needs.
                   </p>
                 </div>
-                <div className="bg-white rounded-lg shadow-lg p-8">
+                <div className="bg-white rounded-lg shadow-lg p-10">
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Values</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-base">
                     We are committed to professionalism, compassion, reliability, and excellence in 
                     every aspect of our medical transportation services.
                   </p>
