@@ -4,6 +4,7 @@ import {
   Twitter, 
   Linkedin,
   Phone,
+  Mail,
   MapPin,
   Clock3,
   HeartPulse
@@ -107,6 +108,18 @@ export default function Footer() {
                 <div>
                   <p className="text-gray-300 text-sm">Hours</p>
                   <p className="text-white text-sm">{contactInfo.hours}</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Mail className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-gray-300 text-sm">Email</p>
+                  <a 
+                    href={`mailto:${contactInfo.email}`}
+                    className="text-white font-semibold hover:text-blue-400 transition-colors duration-200"
+                  >
+                    {contactInfo.email}
+                  </a>
                 </div>
               </div>
             </div>

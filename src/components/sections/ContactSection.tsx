@@ -3,7 +3,8 @@ import {
   MapPin, 
   Building2, 
   Clock3, 
-  Phone, 
+  Phone,
+  Mail,
   ShieldCheck 
 } from 'lucide-react';
 
@@ -59,6 +60,19 @@ export default function ContactSection() {
                       className="text-blue-600 hover:text-blue-700 font-medium"
                     >
                       {contactInfo.phone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <Mail className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-gray-700 font-medium">Email</p>
+                    <a
+                      href={`mailto:${contactInfo.email}`}
+                      className="text-blue-600 hover:text-blue-700 font-medium"
+                    >
+                      {contactInfo.email}
                     </a>
                   </div>
                 </div>

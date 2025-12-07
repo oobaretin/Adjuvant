@@ -7,7 +7,8 @@ import {
   Clock, 
   MapPin, 
   User, 
-  Phone, 
+  Phone,
+  Mail,
   MessageSquare,
   Ambulance,
   HeartPulse,
@@ -60,6 +61,15 @@ export default function BookTransportPage() {
                     <div>
                       <p className="text-gray-700 font-medium">Hours</p>
                       <p className="text-gray-600 text-sm">{contactInfo.hours}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Mail className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <p className="text-gray-700 font-medium">Email</p>
+                      <a href={`mailto:${contactInfo.email}`} className="text-blue-600 hover:text-blue-700">
+                        {contactInfo.email}
+                      </a>
                     </div>
                   </div>
                 </div>
