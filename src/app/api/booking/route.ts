@@ -35,8 +35,13 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const resend = getResend();
+    
+    // Use Resend's default domain if custom domain not verified
+    // You can change this to your verified domain later
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+    
     const { data, error } = await resend.emails.send({
-      from: 'Booking Request <contact@adjuvantambulancetransport.com>',
+      from: `Adjuvant Ambulance Transport <${fromEmail}>`,
       to: ['wisamchreidi@gmail.com'],
       replyTo: email || undefined,
       subject: `New Transport Booking Request from ${firstName} ${lastName}`,
@@ -74,9 +79,14 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
+      console.error('Resend error:', JSON.stringify(error, null, 2));
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { 
+          error: 'Failed to send email',
+          details: error.message || 'Unknown error',
+          // Only include details in development
+          ...(process.env.NODE_ENV === 'development' && { fullError: error })
+        },
         { status: 500 }
       );
     }

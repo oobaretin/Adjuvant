@@ -26,16 +26,19 @@ When customers submit forms on the website, emails are sent to **wisamchreidi@gm
 4. Make sure to add it for **Production**, **Preview**, and **Development** environments
 5. Click **Save**
 
-### 3. Verify Domain (Optional but Recommended)
+### 3. Verify Domain (Optional)
 
-To use `contact@adjuvantambulancetransport.com` as the sender:
+To use a custom domain like `contact@adjuvantambulancetransport.com`:
 
 1. In Resend dashboard, go to **Domains**
 2. Add your domain: `adjuvantambulancetransport.com`
 3. Follow the DNS setup instructions
-4. Once verified, emails will be sent from this domain
+4. Once verified, add environment variable in Vercel:
+   - **Name**: `RESEND_FROM_EMAIL`
+   - **Value**: `contact@adjuvantambulancetransport.com`
+5. Redeploy
 
-**Note**: If you don't verify the domain, Resend will use a default domain like `onboarding@resend.dev`, but emails will still work and go to your Gmail.
+**Note**: By default, the system uses `onboarding@resend.dev` which works immediately without domain verification. Emails will still work and go to your Gmail.
 
 ### 4. Redeploy
 
