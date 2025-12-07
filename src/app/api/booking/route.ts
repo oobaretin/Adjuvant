@@ -33,15 +33,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Check if API key exists
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not set');
+      return NextResponse.json(
+        { error: 'Email service is not configured. Please contact support.' },
+        { status: 500 }
+      );
+    }
+
     // Send email using Resend
     const resend = getResend();
     
-    // Use Resend's default domain if custom domain not verified
-    // You can change this to your verified domain later
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+    // Use Resend's default domain - simpler format
+    const fromEmail = 'onboarding@resend.dev';
     
-    const { data, error } = await resend.emails.send({
-      from: `Adjuvant Ambulance Transport <${fromEmail}>`,
+    console.log('Attempting to send booking email from:', fromEmail, 'to: wisamchreidi@gmail.com');
+    
+    const result = await resend.emails.send({
+      from: fromEmail,
       to: ['wisamchreidi@gmail.com'],
       replyTo: email || undefined,
       subject: `New Transport Booking Request from ${firstName} ${lastName}`,
@@ -58,7 +69,7 @@ export async function POST(request: NextRequest) {
         <p><strong>Preferred Date:</strong> ${transportDate}</p>
         <p><strong>Preferred Time:</strong> ${transportTime}</p>
         <p><strong>Service Type:</strong> ${serviceType}</p>
-        ${specialRequirements ? `<p><strong>Special Requirements:</strong> ${specialRequirements.replace(/\n/g, '<br>')}</p>` : ''}
+        ${specialRequirements ? `<p><strong>Special Requirements:</strong> ${String(specialRequirements).replace(/\n/g, '<br>')}</p>` : ''}
       `,
       text: `
         New Transport Booking Request
@@ -78,27 +89,31 @@ export async function POST(request: NextRequest) {
       `,
     });
 
-    if (error) {
-      console.error('Resend error:', JSON.stringify(error, null, 2));
+    if (result.error) {
+      console.error('Resend error:', JSON.stringify(result.error, null, 2));
+      const errorMessage = result.error.message || 'Unknown error occurred';
       return NextResponse.json(
         { 
           error: 'Failed to send email',
-          details: error.message || 'Unknown error',
-          // Only include details in development
-          ...(process.env.NODE_ENV === 'development' && { fullError: error })
+          details: errorMessage
         },
         { status: 500 }
       );
     }
 
+    console.log('Booking email sent successfully:', result.data?.id);
     return NextResponse.json(
-      { message: 'Booking request sent successfully', id: data?.id },
+      { message: 'Booking request sent successfully', id: result.data?.id },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error('Booking form error:', error);
+    const errorMessage = error?.message || 'Internal server error';
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { 
+        error: 'Failed to process request',
+        details: errorMessage
+      },
       { status: 500 }
     );
   }

@@ -40,9 +40,10 @@ export default function ContactForm() {
         });
         (e.target as HTMLFormElement).reset();
       } else {
+        const errorMsg = result.details || result.error || 'Failed to send message. Please try again or call us directly.';
         setSubmitStatus({
           type: 'error',
-          message: result.error || 'Failed to send message. Please try again.',
+          message: errorMsg,
         });
       }
     } catch (error) {
