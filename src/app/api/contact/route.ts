@@ -35,8 +35,8 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const resend = getResend();
     
-    // Use Resend's default domain - simpler format
-    const fromEmail = 'onboarding@resend.dev';
+    // Use verified domain email, fallback to Resend default if not verified
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'contact@adjuvantambulancetransport.com';
     
     console.log('Attempting to send email from:', fromEmail, 'to: wisamchreidi@gmail.com');
     
