@@ -43,8 +43,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if Gmail credentials exist
-    const gmailUser = process.env.GMAIL_USER;
-    const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
+    const gmailUser = process.env.GMAIL_USER; // Your Gmail account (for authentication)
+    const gmailAppPassword = process.env.GMAIL_APP_PASSWORD; // Your App Password
+    const recipientEmail = process.env.RECIPIENT_EMAIL || 'wisamchreidi@gmail.com'; // Client's email (who receives)
     
     if (!gmailUser || !gmailAppPassword) {
       console.error('Gmail credentials are not set');
@@ -57,11 +58,11 @@ export async function POST(request: NextRequest) {
     // Create transporter and send email
     const transporter = getTransporter();
     
-    console.log('Attempting to send booking email from:', gmailUser, 'to: wisamchreidi@gmail.com');
+    console.log('Sending booking email using:', gmailUser, 'to recipient:', recipientEmail);
     
     const mailOptions = {
       from: `"Adjuvant Ambulance Transport" <${gmailUser}>`,
-      to: 'wisamchreidi@gmail.com',
+      to: recipientEmail,
       replyTo: email || undefined,
       subject: `New Transport Booking Request from ${firstName} ${lastName}`,
       html: `

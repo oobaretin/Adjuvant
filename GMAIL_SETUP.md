@@ -4,9 +4,17 @@ This guide explains how to set up Gmail App Password to send emails from your we
 
 ## Overview
 
-Your website forms will send emails using **YOUR Gmail account** (via SMTP). All emails will be sent **TO** `wisamchreidi@gmail.com` (your client's email address).
+Your website forms will send emails using **YOUR Gmail account's App Password** (for authentication). All emails will be sent **TO** `wisamchreidi@gmail.com` (your client's email address).
 
-**Important**: You'll use YOUR OWN Gmail account to send the emails. The client (`wisamchreidi@gmail.com`) will receive them.
+**How it works:**
+- **GMAIL_USER**: Your Gmail account (used for authentication/sending)
+- **GMAIL_APP_PASSWORD**: Your App Password (from your Gmail account)
+- **RECIPIENT_EMAIL**: Client's email (`wisamchreidi@gmail.com`) - who receives the emails
+
+**Important**: 
+- You use YOUR Gmail App Password to authenticate and send emails
+- Your client (`wisamchreidi@gmail.com`) receives all form submissions
+- The "from" address will show as "Adjuvant Ambulance Transport" but will use your Gmail address for sending
 
 ## Step-by-Step Setup
 
@@ -42,13 +50,19 @@ Gmail requires 2-Step Verification to generate App Passwords:
    - **Name**: `GMAIL_USER`
    - **Value**: `[YOUR Gmail address]` (e.g., `yourname@gmail.com`)
    - **Environments**: Production, Preview, Development
-   - ⚠️ **This should be YOUR Gmail, not wisamchreidi@gmail.com**
+   - ⚠️ **This is YOUR Gmail account** (the one with the App Password you generated)
 
    **Variable 2:**
    - **Name**: `GMAIL_APP_PASSWORD`
    - **Value**: `[Your 16-character app password]` (remove spaces if any)
    - **Environments**: Production, Preview, Development
-   - ⚠️ **Important**: This is sensitive - make sure it's correct!
+   - ⚠️ **This is the App Password from YOUR Gmail account**
+
+   **Variable 3 (Optional):**
+   - **Name**: `RECIPIENT_EMAIL`
+   - **Value**: `wisamchreidi@gmail.com`
+   - **Environments**: Production, Preview, Development
+   - ⚠️ **Optional**: Defaults to `wisamchreidi@gmail.com` if not set
 
 4. Click **Save** for each variable
 
@@ -63,11 +77,14 @@ Or push a new commit to trigger automatic deployment.
 
 ## How It Works
 
+- **Authentication**: Uses YOUR Gmail account + YOUR App Password (for sending capability)
 - **Contact Form** (`/contact`): Sends emails TO wisamchreidi@gmail.com (your client)
 - **Booking Form** (`/emergency`): Sends emails TO wisamchreidi@gmail.com (your client)
-- **From Address**: Emails appear to come from "Adjuvant Ambulance Transport <YOUR_GMAIL>"
+- **From Address**: Shows as "Adjuvant Ambulance Transport" (uses your Gmail for sending)
 - **To Address**: Always sent to wisamchreidi@gmail.com (your client receives them)
 - **Reply-To**: Set to customer's email (so your client can reply directly to customers)
+
+**Key Point**: Gmail SMTP requires authenticating with YOUR account, but emails go TO your client's email address.
 
 ## Testing
 
