@@ -4,16 +4,18 @@ This guide explains how to set up Gmail App Password to send emails from your we
 
 ## Overview
 
-Your website forms will send emails using Gmail SMTP. All emails will be sent to **wisamchreidi@gmail.com** from your Gmail account.
+Your website forms will send emails using **YOUR Gmail account** (via SMTP). All emails will be sent **TO** `wisamchreidi@gmail.com` (your client's email address).
+
+**Important**: You'll use YOUR OWN Gmail account to send the emails. The client (`wisamchreidi@gmail.com`) will receive them.
 
 ## Step-by-Step Setup
 
-### 1. Enable 2-Step Verification
+### 1. Enable 2-Step Verification on YOUR Gmail Account
 
 Gmail requires 2-Step Verification to generate App Passwords:
 
 1. Go to [Google Account Security](https://myaccount.google.com/security)
-2. Sign in with **wisamchreidi@gmail.com**
+2. Sign in with **YOUR OWN Gmail account** (not wisamchreidi@gmail.com)
 3. Under "Signing in to Google", click **2-Step Verification**
 4. Follow the prompts to enable 2-Step Verification
 5. You'll need your phone to complete this step
@@ -38,8 +40,9 @@ Gmail requires 2-Step Verification to generate App Passwords:
 
    **Variable 1:**
    - **Name**: `GMAIL_USER`
-   - **Value**: `wisamchreidi@gmail.com`
+   - **Value**: `[YOUR Gmail address]` (e.g., `yourname@gmail.com`)
    - **Environments**: Production, Preview, Development
+   - ⚠️ **This should be YOUR Gmail, not wisamchreidi@gmail.com**
 
    **Variable 2:**
    - **Name**: `GMAIL_APP_PASSWORD`
@@ -60,17 +63,18 @@ Or push a new commit to trigger automatic deployment.
 
 ## How It Works
 
-- **Contact Form** (`/contact`): Sends emails to wisamchreidi@gmail.com
-- **Booking Form** (`/emergency`): Sends emails to wisamchreidi@gmail.com
-- **From Address**: Emails appear to come from "Adjuvant Ambulance Transport <wisamchreidi@gmail.com>"
-- **Reply-To**: Set to customer's email (so you can reply directly)
+- **Contact Form** (`/contact`): Sends emails TO wisamchreidi@gmail.com (your client)
+- **Booking Form** (`/emergency`): Sends emails TO wisamchreidi@gmail.com (your client)
+- **From Address**: Emails appear to come from "Adjuvant Ambulance Transport <YOUR_GMAIL>"
+- **To Address**: Always sent to wisamchreidi@gmail.com (your client receives them)
+- **Reply-To**: Set to customer's email (so your client can reply directly to customers)
 
 ## Testing
 
 1. Fill out a form on your website
 2. Submit it
-3. Check wisamchreidi@gmail.com inbox
-4. You should receive an email with the form details
+3. Check wisamchreidi@gmail.com inbox (your client's email)
+4. Your client should receive an email with the form details
 
 ## Troubleshooting
 
@@ -83,9 +87,10 @@ Or push a new commit to trigger automatic deployment.
 ### "Invalid login" or authentication errors
 
 - Double-check the App Password is correct (16 characters, no spaces)
-- Make sure 2-Step Verification is enabled
+- Make sure 2-Step Verification is enabled on YOUR Gmail account
 - Try generating a new App Password
-- Verify `GMAIL_USER` is exactly `wisamchreidi@gmail.com`
+- Verify `GMAIL_USER` is YOUR Gmail address (not wisamchreidi@gmail.com)
+- Make sure you're using the App Password from YOUR account, not the client's account
 
 ### Emails not arriving?
 
