@@ -46,6 +46,7 @@ export async function POST(request: NextRequest) {
     const gmailUser = process.env.GMAIL_USER; // Your Gmail account (for authentication)
     const gmailAppPassword = process.env.GMAIL_APP_PASSWORD; // Your App Password
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'wisamchreidi@gmail.com'; // Client's email (who receives)
+    const ccEmail = process.env.CC_EMAIL; // Optional: Your email to receive copies
     
     if (!gmailUser || !gmailAppPassword) {
       console.error('Gmail credentials are not set');
@@ -58,11 +59,12 @@ export async function POST(request: NextRequest) {
     // Create transporter and send email
     const transporter = getTransporter();
     
-    console.log('Sending booking email using:', gmailUser, 'to recipient:', recipientEmail);
+    console.log('Sending booking email using:', gmailUser, 'to:', recipientEmail, ccEmail ? `CC: ${ccEmail}` : '');
     
     const mailOptions = {
       from: `"Adjuvant Ambulance Transport" <${gmailUser}>`,
       to: recipientEmail,
+      ...(ccEmail && { cc: ccEmail }),
       replyTo: email || undefined,
       subject: `New Transport Booking Request from ${firstName} ${lastName}`,
       html: `

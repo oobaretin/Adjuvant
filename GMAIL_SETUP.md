@@ -64,6 +64,12 @@ Gmail requires 2-Step Verification to generate App Passwords:
    - **Environments**: Production, Preview, Development
    - ⚠️ **Optional**: Defaults to `wisamchreidi@gmail.com` if not set
 
+   **Variable 4 (Optional - Recommended):**
+   - **Name**: `CC_EMAIL`
+   - **Value**: `[Your email address]` (e.g., `yourname@gmail.com`)
+   - **Environments**: Production, Preview, Development
+   - ⚠️ **Optional**: Add your email here to receive copies of all form submissions (so you can monitor them)
+
 4. Click **Save** for each variable
 
 ### 4. Redeploy
@@ -82,6 +88,7 @@ Or push a new commit to trigger automatic deployment.
 - **Booking Form** (`/emergency`): Sends emails TO wisamchreidi@gmail.com (your client)
 - **From Address**: Shows as "Adjuvant Ambulance Transport" (uses your Gmail for sending)
 - **To Address**: Always sent to wisamchreidi@gmail.com (your client receives them)
+- **CC Address**: If `CC_EMAIL` is set, you'll also receive copies of all emails
 - **Reply-To**: Set to customer's email (so your client can reply directly to customers)
 
 **Key Point**: Gmail SMTP requires authenticating with YOUR account, but emails go TO your client's email address.
