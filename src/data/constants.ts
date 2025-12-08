@@ -57,7 +57,7 @@ export const contactInfo = {
   building: 'Located in: Southwest Atrium Offices Ltd',
   hours: 'Open 24 hours',
   phone: '979-633-8437',
-  email: 'contact@adjuvantambulancetransport.com',
+  email: 'wisamchreidi@gmail.com',
   accessibility: 'Wheelchair accessible'
 } as const;
 

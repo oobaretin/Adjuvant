@@ -1,12 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
-const getResend = () => {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    throw new Error('RESEND_API_KEY is not configured');
+const getTransporter = () => {
+  const gmailUser = process.env.GMAIL_USER;
+  const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
+
+  if (!gmailUser || !gmailAppPassword) {
+    throw new Error('Gmail credentials are not configured');
   }
-  return new Resend(apiKey);
+
+  return nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: gmailUser,
+      pass: gmailAppPassword,
+    },
+  });
 };
 
 export async function POST(request: NextRequest) {
@@ -22,27 +31,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if API key exists
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      console.error('RESEND_API_KEY is not set');
+    // Check if Gmail credentials exist
+    const gmailUser = process.env.GMAIL_USER;
+    const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
+    
+    if (!gmailUser || !gmailAppPassword) {
+      console.error('Gmail credentials are not set');
       return NextResponse.json(
         { error: 'Email service is not configured. Please contact support.' },
         { status: 500 }
       );
     }
 
-    // Send email using Resend
-    const resend = getResend();
+    // Create transporter and send email
+    const transporter = getTransporter();
     
-    // Use verified domain email, fallback to Resend default if not verified
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'contact@adjuvantambulancetransport.com';
+    console.log('Attempting to send email from:', gmailUser, 'to: wisamchreidi@gmail.com');
     
-    console.log('Attempting to send email from:', fromEmail, 'to: wisamchreidi@gmail.com');
-    
-    const result = await resend.emails.send({
-      from: fromEmail,
-      to: ['wisamchreidi@gmail.com'],
+    const mailOptions = {
+      from: `"Adjuvant Ambulance Transport" <${gmailUser}>`,
+      to: 'wisamchreidi@gmail.com',
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -63,23 +71,13 @@ export async function POST(request: NextRequest) {
         Message:
         ${message}
       `,
-    });
+    };
 
-    if (result.error) {
-      console.error('Resend error:', JSON.stringify(result.error, null, 2));
-      const errorMessage = result.error.message || 'Unknown error occurred';
-      return NextResponse.json(
-        { 
-          error: 'Failed to send email',
-          details: errorMessage
-        },
-        { status: 500 }
-      );
-    }
-
-    console.log('Email sent successfully:', result.data?.id);
+    const info = await transporter.sendMail(mailOptions);
+    
+    console.log('Email sent successfully:', info.messageId);
     return NextResponse.json(
-      { message: 'Email sent successfully', id: result.data?.id },
+      { message: 'Email sent successfully', id: info.messageId },
       { status: 200 }
     );
   } catch (error: any) {
@@ -94,4 +92,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
